@@ -1,7 +1,7 @@
 ﻿# 「登場退場（汎用）」エフェクト・図形プラグイン
 [![.NET](https://img.shields.io/badge/.NET-9.0-purple.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/thiramisu/ymm4-plugin-general-in-out.svg)](https://github.com/thiramisu/ymm4-plugin-general-in-out/releases/tag/v1.0.0)
+[![Release](https://img.shields.io/github/v/release/thiramisu/ymm4-plugin-general-in-out.svg)](https://github.com/thiramisu/ymm4-plugin-general-in-out/releases/latest)
 ![ロゴ](logo.png)
 
 ## Tips<br>
