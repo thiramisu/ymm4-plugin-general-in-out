@@ -32,7 +32,7 @@ public class GeneralEffectInOut : VideoEffectBase
     public override string Label => "登場退場（汎用）";
 
     [Display(GroupName = "登場退場（汎用） / 全体設定")]
-    [PluginInfoButton]
+    [PluginInfoButton(PropertyEditorSize = PropertyEditorSize.FullWidth)]
     public static bool Dummy { get => false; set { } }
 
     [Display(GroupName = "登場退場（汎用） / 全体設定", AutoGenerateField = true)]

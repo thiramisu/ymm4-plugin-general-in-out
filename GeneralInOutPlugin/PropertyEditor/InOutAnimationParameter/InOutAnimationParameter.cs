@@ -7,15 +7,14 @@ namespace GeneralInOutPlugin.PropertyEditor.InOutAnimationParameter;
 
 public class InOutAnimationParameter : Animatable, IInOutAnimationParameter
 {
-
-    [Display(Name = "登場所要", Description = "登場アニメーションが再生される秒数。\n0にすると瞬間移動になります。これと登場前遅延の両方を0にすると登場アニメーションが無効になります")]
+    [Display(Name = "登場", Description = "登場アニメーションが再生される秒数。\n0にすると瞬間移動になります。これと登場前遅延の両方を0にすると登場アニメーションが無効になります")]
     [TextBoxSlider("F2", "秒", 0d, 4d)]
     [DefaultValue(0.3d)]
     [Range(0d, YMM4Constants.VeryLargeValue)]
     public double DurationSecondsIn { get => durationSecondsIn; set => Set(ref durationSecondsIn, value); }
     double durationSecondsIn = 0.3d;
 
-    [Display(Name = "退場所要", Description = "退場アニメーションが再生される秒数。\n0にすると瞬間移動になります。これと退場後遅延の両方を0にすると退場アニメーションが無効になります")]
+    [Display(Name = "退場", Description = "退場アニメーションが再生される秒数。\n0にすると瞬間移動になります。これと退場後遅延の両方を0にすると退場アニメーションが無効になります")]
     [TextBoxSlider("F2", "秒", 0d, 4d)]
     [DefaultValue(0.3d)]
     [Range(0d, YMM4Constants.VeryLargeValue)]
@@ -29,7 +28,7 @@ public class InOutAnimationParameter : Animatable, IInOutAnimationParameter
     public double DelaySecondsBeforeIn { get => delayInSeconds; set => Set(ref delayInSeconds, value); }
     double delayInSeconds = 0d;
 
-    [Display(Name = "退場後遅延", Description = "退場アニメーション終了からアイテム非表示までの秒数")]
+    [Display(Name = "退場後遅延", Description = "退場アニメーション終了からアイテム非表示までの秒数\n大きくするほど登場側に寄っていきます（登場前遅延との対称性を優先した仕様です）")]
     [TextBoxSlider("F2", "秒", -4d, 4d)]
     [DefaultValue(0d)]
     [Range(YMM4Constants.VerySmallValue, YMM4Constants.VeryLargeValue)]
