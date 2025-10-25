@@ -33,7 +33,7 @@ class GeneralShapeInOutParameter : ShapeParameterBase
     public static ShapeComboBoxItem[] ShapeComboBoxItems => ShapeComboBoxItem.GetItemsNotOfType<GeneralShapeInOutPlugin>();
 
     [Display(Name = "種類2")]
-    [CommonComboBox("Name", "ShapePlugin", "ShapeComboBoxItems")]
+    [CommonComboBox(nameof(ShapeComboBoxItem.Name), nameof(ShapeComboBoxItem.ShapePlugin), nameof(ShapeComboBoxItems))]
     public IShapePlugin ShapePlugin
     {
         get => shapePlugin;
