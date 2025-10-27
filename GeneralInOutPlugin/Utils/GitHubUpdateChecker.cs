@@ -30,10 +30,8 @@ public static class GitHubUpdateChecker
     /// </summary>
     public static Task<VersionCheckResult> CheckLatestVersionAsync(string repoOwner, string repoName)
     {
-        if (string.IsNullOrWhiteSpace(repoOwner))
-            throw new ArgumentException($"{nameof(repoOwner)} が空です。");
-        if (string.IsNullOrWhiteSpace(repoName))
-            throw new ArgumentException($"{nameof(repoName)} が空です。");
+        ArgumentException.ThrowIfNullOrWhiteSpace(repoOwner);
+        ArgumentException.ThrowIfNullOrWhiteSpace(repoName);
 
         // キャッシュがあればそれを返す
         // クライアントごとのAPI呼び出し回数に時間あたりの制限があるので、キャッシュがあれば常にそれを利用
