@@ -56,7 +56,7 @@ public class GeneralEffectInOut : VideoEffectBase
         }
     }
     ImmutableList<IVideoEffect> effects = [];
-    public IEnumerable<VideoEffectWithInOutAnimation> GetEffectsAsVideoEffectWithAnimation() => effects.OfType<VideoEffectWithInOutAnimation>();
+    public IEnumerable<VideoEffectWithInOutAnimation> GetEffectsAsVideoEffectWithAnimation() => effects.Cast<VideoEffectWithInOutAnimation>();
 
     public override IEnumerable<string> CreateExoVideoFilters(int keyFrameIndex, ExoOutputDescription exoOutputDescription) => [];
 
