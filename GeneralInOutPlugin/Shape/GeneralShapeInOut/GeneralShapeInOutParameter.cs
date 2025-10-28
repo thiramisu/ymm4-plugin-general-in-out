@@ -6,6 +6,7 @@ using GeneralInOutPlugin.PropertyEditor.PluginInfoFile;
 using GeneralInOutPlugin.PropertyEditor.PluginInfoLink;
 using GeneralInOutPlugin.PropertyEditor.PluginInfoRepo;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using YukkuriMovieMaker.Commons;
 using YukkuriMovieMaker.Controls;
 using YukkuriMovieMaker.Exo;
@@ -28,7 +29,9 @@ class GeneralShapeInOutParameter : ShapeParameterBase
 {
     [Display()]
     [PluginInfoButton]
-    public static bool Dummy { get => false; set { } }
+    [JsonIgnore]
+    [Obsolete("コントロール生成用ダミープロパティ")]
+    public static bool PluginInfoButtonDummy => false;
 
     public static ShapeComboBoxItem[] ShapeComboBoxItems => ShapeComboBoxItem.GetItemsNotOfType<GeneralShapeInOutPlugin>();
 

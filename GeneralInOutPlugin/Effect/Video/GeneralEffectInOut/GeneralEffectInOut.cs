@@ -5,6 +5,7 @@ using GeneralInOutPlugin.PropertyEditor.PluginInfoLink;
 using GeneralInOutPlugin.PropertyEditor.PluginInfoRepo;
 using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using YukkuriMovieMaker.Commons;
 using YukkuriMovieMaker.Controls;
 using YukkuriMovieMaker.Exo;
@@ -33,7 +34,9 @@ public class GeneralEffectInOut : VideoEffectBase
 
     [Display(GroupName = "登場退場（汎用） / 全体設定")]
     [PluginInfoButton(PropertyEditorSize = PropertyEditorSize.FullWidth)]
-    public static bool Dummy { get => false; set { } }
+    [JsonIgnore]
+    [Obsolete("コントロール生成用ダミープロパティ")]
+    public static bool PluginInfoButtonDummy => false;
 
     [Display(GroupName = "登場退場（汎用） / 全体設定", AutoGenerateField = true)]
     public InOutAnimationParameter InOutAnimationParameter { get; } = new();
