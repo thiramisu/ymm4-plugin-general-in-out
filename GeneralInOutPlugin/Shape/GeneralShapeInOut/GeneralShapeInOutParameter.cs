@@ -69,8 +69,6 @@ class GeneralShapeInOutParameter : ShapeParameterBase
 
     public GeneralShapeInOutParameter() : this(null)
     {
-        // 親と子で共通のstoreを使用
-        shapeParameter = shapePlugin.CreateShapeParameter(null);
     }
 
     public override IEnumerable<string> CreateMaskExoFilter(int keyFrameIndex, ExoOutputDescription desc, ShapeMaskExoOutputDescription shapeMaskParameters) => [];
