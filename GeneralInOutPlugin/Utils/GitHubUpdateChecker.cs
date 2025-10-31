@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace GeneralInOutPlugin.Utils;
 
-public readonly record struct VersionCheckResult
+public record VersionCheckResult
 {
     public string? LatestTagName { get; init; }
     public string? ErrorMessage { get; init; }
