@@ -105,5 +105,9 @@ X：@tiramisu_oTATo
 　　https://github.com/HAIsanGames813/AddShapeEffect
 
 ■ 更新履歴 ■
+□ v1.0.2 (2025-10-31)
+　　内部処理の最適化
+□ v1.0.1 (2025-10-24)
+　　UIと説明を微調整
 □ v1.0.0 (2025-10-23)
 　　初回リリース
