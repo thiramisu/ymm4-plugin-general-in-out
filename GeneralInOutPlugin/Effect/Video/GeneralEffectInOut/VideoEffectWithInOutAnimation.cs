@@ -9,7 +9,9 @@ using YukkuriMovieMaker.ItemEditor.CustomVisibilityAttributes;
 using YukkuriMovieMaker.Player.Video;
 using YukkuriMovieMaker.Plugin.Effects;
 
+#pragma warning disable IDE0130 // Namespace がフォルダー構造と一致しません
 namespace GeneralInOutPlugin.VideoEffect.Video.GeneralEffectInOut;
+#pragma warning restore IDE0130 // Namespace がフォルダー構造と一致しません
 
 public class VideoEffectWithInOutAnimation(IVideoEffect effect) : VideoEffectBase, IInOutAnimationParameter
 {

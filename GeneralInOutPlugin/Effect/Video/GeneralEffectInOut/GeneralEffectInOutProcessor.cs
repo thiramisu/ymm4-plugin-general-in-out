@@ -4,7 +4,9 @@ using Vortice.Direct2D1;
 using YukkuriMovieMaker.Commons;
 using YukkuriMovieMaker.Player.Video;
 
+#pragma warning disable IDE0130 // Namespace がフォルダー構造と一致しません
 namespace GeneralInOutPlugin.VideoEffect.Video.GeneralEffectInOut;
+#pragma warning restore IDE0130 // Namespace がフォルダー構造と一致しません
 
 internal class GeneralEffectInOutProcessor : IVideoEffectProcessor
 {

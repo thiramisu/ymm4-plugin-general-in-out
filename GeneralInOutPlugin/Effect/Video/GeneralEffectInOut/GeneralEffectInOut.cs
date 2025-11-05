@@ -13,7 +13,9 @@ using YukkuriMovieMaker.Player.Video;
 using YukkuriMovieMaker.Plugin;
 using YukkuriMovieMaker.Plugin.Effects;
 
+#pragma warning disable IDE0130 // Namespace がフォルダー構造と一致しません
 namespace GeneralInOutPlugin.VideoEffect.Video.GeneralEffectInOut;
+#pragma warning restore IDE0130 // Namespace がフォルダー構造と一致しません
 
 // 映像エフェクト
 // 映像エフェクトには必ず[VideoEffect]属性を設定してください。
