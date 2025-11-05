@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<InformationalVersion>1.1.0</InformationalVersion>
+		<InformationalVersion>1.1.1</InformationalVersion>
 		
 		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>

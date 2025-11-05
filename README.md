@@ -110,6 +110,8 @@ X：[@tiramisu_oTATo](https://x.com/tiramisu_oTATo)
     https://github.com/HAIsanGames813/AddShapeEffect
 
 ## 更新履歴
+- v1.1.1 (2025-11-06)<br>
+    登場退場アニメーション図形で元に戻す・やり直しが上手くいかないバグを修正
 - v1.1.0 (2025-11-03)<br>
     YMM4本体のv4.46.0.0付近のアップデートによる内部APIの変更に対応<br>
     本体のバージョンがそれ以前のものを使用している場合、このアップデートはせず、v1.0.2を使用してください。
