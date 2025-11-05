@@ -47,15 +47,34 @@ class GeneralShapeInOutParameter : ShapeParameterBase
             var valueTypeFullName = value.GetType().FullName;
             if (Set(ref shapePlugin, ShapeComboBoxItems.First((item) => item.ShapePlugin.GetType().FullName == valueTypeFullName).ShapePlugin))
             {
+                var newParameter = value.CreateShapeParameter(GetSharedData());
+                if (ShapeParameter.GetType() == newParameter.GetType())
+                {
+                    // UndoRedo時にCreateすると履歴が壊れるので、それを避ける
+                    return;
+                }
                 // 親と子で共通のstoreを使用
-                ShapeParameter = value.CreateShapeParameter(GetSharedData());
+                ShapeParameter = newParameter;
             }
         }
     }
     IShapePlugin shapePlugin = ShapeComboBoxItem.DefaultItem.ShapePlugin;
 
     [Display(AutoGenerateField = true)]
-    public IShapeParameter ShapeParameter { get => shapeParameter; set => Set(ref shapeParameter, value); }
+    public IShapeParameter ShapeParameter
+    {
+        get => shapeParameter;
+        set
+        {
+            if (shapeParameter == value)
+            {
+                return;
+            }
+            UnSubscribeChildUndoRedoable(ShapeParameter);
+            _ = Set(ref shapeParameter, value);
+            SubscribeChildUndoRedoable(ShapeParameter);
+        }
+    }
     IShapeParameter shapeParameter;
 
     [Display(GroupName = "登場退場アニメーション", AutoGenerateField = true)]
@@ -65,6 +84,7 @@ class GeneralShapeInOutParameter : ShapeParameterBase
     {
         // 親と子で共通のstoreを使用
         shapeParameter = shapePlugin.CreateShapeParameter(sharedData);
+        SubscribeChildUndoRedoable(ShapeParameter);
     }
 
     public GeneralShapeInOutParameter() : this(null)
@@ -88,8 +108,8 @@ class GeneralShapeInOutParameter : ShapeParameterBase
     }
 
     protected override void SaveSharedData(SharedDataStore store) =>
-        // shapeParameter の内部実装のSaveを呼び出す
-        shapeParameter.GetSharedData();
         // 2つのプラグイン間で互いに呼び出しあう可能性を考えると、もしセーブデータを参照してしまうと無限ループになるので ShapePlugin は保存しない
         //store.Save(new SharedData(this));
+        // shapeParameter の内部実装のSaveを呼び出す
+        shapeParameter.GetSharedData();
 }
